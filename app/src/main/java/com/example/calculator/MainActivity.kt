@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             number1 = txtNumber1.text.toString().toInt()
             number2 = txtNumber2.text.toString().toInt()
             when (v.id) {
+
                 R.id.btnMultiplication -> {
                     resultNumb = Multiplication(number1, number2)
                     txtResult.setText(resultNumb.toString())
@@ -37,9 +38,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
-
     private fun Multiplication(number1: Int, number2: Int) : Int {
         return number1 * number2
 
+    private fun additional(number1: Int, number2: Int) : Int {
+        return number1 + number2
     }
 }
