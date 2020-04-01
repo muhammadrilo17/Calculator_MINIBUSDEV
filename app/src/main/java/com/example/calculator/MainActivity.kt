@@ -34,14 +34,21 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     resultNumb = Multiplication(number1, number2)
                     txtResult.setText(resultNumb.toString())
                 }
-
+                R.id.btnDivion -> {
+                    var resultNumb1 = divison(number1,number2)
+                    txtResult.setText(resultNumb1.toString())
+                }
             }
         }
     }
     private fun Multiplication(number1: Int, number2: Int) : Int {
         return number1 * number2
-
+    }
     private fun additional(number1: Int, number2: Int) : Int {
         return number1 + number2
+    }
+    private fun divison(number1: Int,number2: Int) : Float {
+        var temp : Float = (number1 / number2).toFloat()
+        return temp
     }
 }
