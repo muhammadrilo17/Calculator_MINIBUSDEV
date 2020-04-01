@@ -10,18 +10,31 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         
-        btnTambah.setOnClickListener {
-            if (txtNumber1.text.toString().isEmpty() || txtNumber2.text.toString().isEmpty()) {
-                txtNumber1.setError("Semua input harus diisi!")
-            } else {
-                val a = txtNumber1.text.toString().toDouble()
-                val b = txtNumber2.text.toString().toDouble()
-                val c = this.tambah(a, b)
-                txtHasil.setText(c.toString())
+     btnMultiplication.setOnClickListener(this)
+        btnAdditional.setOnClickListener(this)
+    }
+
+    override fun onClick(v: View) {
+        if (txtNumber1.text.isEmpty()){
+            txtNumber1.error = "Field Cannot Blank"
+        }
+        else if (txtNumber2.text.isEmpty()){
+            txtNumber2.error = "Field Cannot Blank"
+        }
+        else{
+            number1 = txtNumber1.text.toString().toInt()
+            number2 = txtNumber2.text.toString().toInt()
+            when (v.id) {
+                R.id.btnAdditional -> {
+                    resultNumb = additional(number1, number2)
+                    txtResult.setText(resultNumb.toString())
+                }
+
             }
         }
     }
-     fun tambah(a: Double, b: Double): Double {
-        return a + b
+
+    private fun additional(number1: Int, number2: Int) : Int {
+        return number1 + number2
     }
 }
