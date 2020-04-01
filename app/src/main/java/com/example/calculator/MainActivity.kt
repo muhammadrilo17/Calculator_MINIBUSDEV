@@ -16,6 +16,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_main)
 
         btnMultiplication.setOnClickListener(this)
+        btnDivion.setOnClickListener(this)
+        btnSubstraction.setOnClickListener(this)
+        btnAddition.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
@@ -38,6 +41,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     var resultNumb1 = divison(number1,number2)
                     txtResult.setText(resultNumb1.toString())
                 }
+                R.id.btnSubstraction -> {
+                    resultNumb = subtraction(number1,number2)
+                    txtResult.setText(resultNumb.toString())
+                }
+                R.id.btnAddition -> {
+                    resultNumb = additional(number1,number2)
+                    txtResult.setText(resultNumb.toString())
+                }
             }
         }
     }
@@ -50,5 +61,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun divison(number1: Int,number2: Int) : Float {
         var temp : Float = (number1 / number2).toFloat()
         return temp
+    }
+    private fun subtraction(number1: Int, number2: Int) : Int{
+        return number1 - number2
     }
 }
