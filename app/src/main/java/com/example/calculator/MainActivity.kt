@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_main)
 
         btnMultiplication.setOnClickListener(this)
+        btnDivion.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
@@ -29,7 +30,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             number1 = txtNumber1.text.toString().toInt()
             number2 = txtNumber2.text.toString().toInt()
             when (v.id) {
-
                 R.id.btnMultiplication -> {
                     resultNumb = Multiplication(number1, number2)
                     txtResult.setText(resultNumb.toString())
