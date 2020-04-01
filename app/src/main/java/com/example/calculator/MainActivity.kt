@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     txtResult.setText(resultNumb.toString())
                 }
                 R.id.btnDivion -> {
-                    var resultNumb1 = divison(number1,number2)
+                    var resultNumb1 : Float = divison(number1.toFloat(),number2.toFloat())
                     txtResult.setText(resultNumb1.toString())
                 }
                 R.id.btnSubstraction -> {
@@ -58,8 +58,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun additional(number1: Int, number2: Int) : Int {
         return number1 + number2
     }
-    private fun divison(number1: Int,number2: Int) : Float {
-        var temp : Float = (number1 / number2).toFloat()
+    private fun divison(number1: Float,number2: Float) : Float {
+        var temp : Float = (number1 / number2)
         return temp
     }
     private fun subtraction(number1: Int, number2: Int) : Int{
